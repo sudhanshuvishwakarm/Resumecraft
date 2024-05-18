@@ -4,7 +4,7 @@ import Body from './Components/Body/Body';
 
 function App() {
   return (
-    <div className="container mx-auto App">
+    <div className="mx-[50px]  App">
      <Header />
      <Body></Body>
     </div>

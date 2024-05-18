@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef,useEffect } from 'react'
 import './Resume.css'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
@@ -11,7 +11,19 @@ const Resume = (props) => {
   const educationtDatas = props.educationData
   const achivementDatas = props.achivementData
   const summaryDatas = props.summaryData
-  
+
+
+//   const {activeColor}=props
+
+
+// useEffect(() => {
+//   console.log('Active Color:', activeColor);
+// }, [activeColor]);
+
+
+  console.log(props.pallateActive)
+
+
 
 
 
@@ -28,10 +40,9 @@ const Resume = (props) => {
         const imgY = 30; pdf .addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio); pdf.save('invoice.pdf');
   });
   };
-
-
-
-
+const pallate=props.pallateActive
+  
+console.log(pallate)
 
   return (
     <div className='flex flex-col'>
@@ -39,7 +50,8 @@ const Resume = (props) => {
         <div className='flex flex-col basicinfo'>
           <div className='text-center p-7 bg-slate-700'>
             <h1 className='text-[40px] text-white font-semibold leading-10 '> {basicInfo.name}</h1>
-            <p className={`text-4xl `}>{basicInfo.title}</p>
+            <p className={`text-4xl text-${pallate}`}>{basicInfo.title}</p>
+
           </div>
 
         </div>

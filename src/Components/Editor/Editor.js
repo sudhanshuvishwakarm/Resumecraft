@@ -7,13 +7,9 @@ import './Editor.css'
 const Editor = ({ sections }) => {
   const section = sections;
   const a = ['blue', 'black', 'red', 'yellow', 'aqua']
-
-  const [colorIndex,setColorIndex]=useState(null)
- function handleColor(color){
-  setColorIndex(color)
-  console.log(colorIndex)
- }
-
+  var pallate;
+  
+  const [activeBorder,setActiveBorder]=useState('red')
 
   const [activestate, setactivestate] = useState(0);
   const [resumestate, setresumestate] = useState(false);
@@ -304,7 +300,7 @@ const Editor = ({ sections }) => {
           {
             Object.values(section).map((obj, index) => {
               return (
-                <div onClick={() => setactivestate(index)} style={{
+                <div onClick={() => setactivestate(index)}   style={{
                   backgroundColor: activestate === index ? '#3ED3CD' : "",
                   font:'bold',
                   textDecorationLine: activestate === index ? 'underline' : ""
@@ -322,14 +318,16 @@ const Editor = ({ sections }) => {
 
         </div>
       </div>
-      <div className='my-8 heading-color'>
+      {/* <div className='my-8 heading-color'>
         <div className=" bg-[#f0edfe] flex justify-around">
           <div  className='flex gap-2 cursor-pointer'>
             {
               a.map((color, index) => {
                 return (
-                  <div key={index} onClick={()=>handleColor(color)} style={{
-                    background: color
+                  <div key={index} onClick={()=>{setActiveBorder(color)
+                  }}  style={{
+                    background: color,
+                     border:activeBorder===color?"2px solid black":""
                   }} className={` h-[40px] w-[40px] rounded-[50%]`}></div>
                 )
               })
@@ -337,11 +335,11 @@ const Editor = ({ sections }) => {
           </div>
           <p className="text-xl leading-10 tracking-[1px] font-semibold">Select color to highlight importants</p>
         </div>
-      </div>
+      </div> */}
       <div className='container flex justify-start mx-auto '>
 
         {
-          resumestate ? <Resume basic={basicInfoData} colors={colorIndex} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> : ""
+          resumestate ? <Resume  pallateActive={activeBorder}  basic={basicInfoData}  workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> : ""
         }
 
       </div>
