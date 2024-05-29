@@ -2,15 +2,15 @@ import React, { useRef,useEffect } from 'react'
 import './Resume.css'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
-const Resume = (props) => {
+const Resume = ({basic,workExp,projectData,educationData,achivementData,summaryData,pallateActive}) => {
 
-  const pdfRef = useRef();
-  const basicInfo = props.basic
-  const workExp = props.workExp
-  const projectDatas = props.projectData
-  const educationtDatas = props.educationData
-  const achivementDatas = props.achivementData
-  const summaryDatas = props.summaryData
+   const pdfRef = useRef();
+  // const basic = props.basic
+  // const workExp = props.workExp
+  // const projectData = props.projectData
+  // const educationData = props.educationData
+  // const achivementData = props.achivementData
+  // const summaryData = props.summaryData
 
 
 //   const {activeColor}=props
@@ -21,7 +21,7 @@ const Resume = (props) => {
 // }, [activeColor]);
 
 
-  console.log(props.pallateActive)
+  console.log(pallateActive)
 
 
 
@@ -40,47 +40,47 @@ const Resume = (props) => {
         const imgY = 30; pdf .addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio); pdf.save('invoice.pdf');
   });
   };
-const pallate=props.pallateActive
+
   
-console.log(pallate)
+
 
   return (
-    <div className='flex flex-col'>
-      <section className='flex flex-col h-auto  w-[70%] mx-auto bg-white' ref={pdfRef}>
-        <div className='flex flex-col basicinfo'>
-          <div className='text-center p-7 bg-slate-700'>
-            <h1 className='text-[40px] text-white font-semibold leading-10 '> {basicInfo.name}</h1>
-            <p className={`text-4xl text-${pallate}`}>{basicInfo.title}</p>
+    <div className='flex flex-col w-[794px] h-[1124px]' ref={pdfRef}>
+      <section className='flex flex-col  w-[794px] h-[1124px]    mx-auto bg-white' >
+        <div className='flex flex-col basic'>
+          <div className='flex flex-col gap-[14px] p-10 text-center bg-slate-700'>
+            <h1 className=' py-2 text-[40px] text-white font-semibold leading-10 '> {basic.name}</h1>
+            <p className="text-4xl " style={{color:pallateActive}}>{basic.title}</p>
 
           </div>
 
         </div>
 
 
-        <div className='flex justify-between w-[100%]'>
-          <div className='flex flex-col text-start w-[60%] p-10 bg-orange-200 left '>
+        <div className='flex justify-between w-[100%] h-[100%]'>
+          <div className='flex flex-col text-start h-[100%] w-[60%] p-10 bg-orange-200 left '>
             <div className='flex flex-col text-start w-[100%] left py-5'>
-              <h1 className='text-3xl font-semibold leading-10 underline'>Contact Details</h1>
-              <p><i className="m-2 fa-solid fa-envelope"></i>{basicInfo.email}</p>
-              <p><i className="m-2 fa-solid fa-phone"></i>{basicInfo.phone}</p>
-              <p><i className="m-2 fa-brands fa-linkedin"></i>{basicInfo.linkedin}</p>
-              <p><i className="m-2 fa-brands fa-github"></i>{basicInfo.github}</p>
+              <h1 className='py-2 text-3xl font-semibold leading-10 underline '>Contact Details</h1>
+              <p><i className="m-2 fa-solid fa-envelope"></i>{basic.email}</p>
+              <p><i className="m-2 fa-solid fa-phone"></i>{basic.phone}</p>
+              <p><i className="m-2 fa-brands fa-linkedin"></i>{basic.linkedin}</p>
+              <p><i className="m-2 fa-brands fa-github"></i>{basic.github}</p>
             </div>
             <div className="flex flex-col text-start w-[100%] left py-5">
-              <h1 className='text-3xl font-semibold leading-10 underline'>{educationtDatas.sectiontitle}</h1>
-              <p>{educationtDatas.sectiontitletitle}</p>
-              <p className='font-semibold'>{educationtDatas.course}</p>
-              <p className='leading-7'>{educationtDatas.university}</p>
-              <p className='leading-7'>{educationtDatas.collage}</p>
-              <p className='leading-7'>{educationtDatas.startdate}</p>
-              <p className='leading-7'>{educationtDatas.enddate}</p>
+              <h1 className='py-2 text-3xl font-semibold leading-10 underline '>{educationData.sectiontitle}</h1>
+              <p>{educationData.sectiontitletitle}</p>
+              <p className='text-[17px] font-semibold'>{educationData.course}</p>
+              <p className='leading-7'>{educationData.university}</p>
+              <p className='leading-7'>{educationData.collage}</p>
+              <p className='leading-7'>{educationData.startdate}</p>
+              <p className='leading-7'>{educationData.enddate}</p>
             </div>
             <div className="flex flex-col text-start w-[100%] left py-5">
-              <h1 className='text-3xl font-semibold leading-10 underline '>{achivementDatas.sectiontitle}</h1>
-              <p className='leading-7'>{achivementDatas.achivement1}</p>
-              <p className='leading-7'>{achivementDatas.achivement2}</p>
-              <p className='leading-7'>{achivementDatas.achivement3}</p>
-              <p className='leading-7'>{achivementDatas.achivement4}</p>
+              <h1 className='py-2 text-3xl font-semibold leading-10 underline '>{achivementData.sectiontitle}</h1>
+              <p className='leading-7'>{achivementData.achivement1}</p>
+              <p className='leading-7'>{achivementData.achivement2}</p>
+              <p className='leading-7'>{achivementData.achivement3}</p>
+              <p className='leading-7'>{achivementData.achivement4}</p>
             </div>
           </div>
 
@@ -93,31 +93,31 @@ console.log(pallate)
           <div className='flex flex-col text-start w-[100%] bg-white left p-10'>
 
             <div className="flex flex-col py-5">
-              <h1 className='text-3xl font-semibold leading-10 underline'>{summaryDatas.sectiontitle}</h1>
-              <p>{summaryDatas.summary}</p>
+              <h1 className='flex py-2 text-3xl font-semibold leading-10 underline '>{summaryData.sectiontitle}</h1>
+              <p>{summaryData.summary}</p>
 
 
             </div>
             <div className="flex flex-col py-5">
-              <h1 className='text-3xl font-semibold leading-10 underline'>{projectDatas.sectiontitle}</h1>
-              <p>{projectDatas.title}</p>
-              <p>{projectDatas.overview}</p>
-              <p>{projectDatas.deploylink}</p>
-              <p>{projectDatas.gtihublink}</p>
-              <p>{projectDatas.projectdescription}</p>
+              <h1 className='py-2 text-3xl font-semibold leading-10 underline '>{projectData.sectiontitle}</h1>
+              <p className='text-[17px] font-semibold'>{projectData.title}</p>
+              <p className='py-[2px] underline cursor-pointer'>{projectData.deploylink}</p>
+              <p className='py-[2px] underline cursor-pointer'>{projectData.githublink}</p>
+              <li>{projectData.overview}</li>
+              <li>{projectData.projectdescription}</li>
 
             </div>
             <div className="flex flex-col py-5 text-start">
-              <h1 className='text-3xl font-semibold leading-10 underline'>{workExp.sectiontitle}</h1>
-              <p className='font-semibold'>{workExp.title}</p>
+              <h1 className='py-2 text-3xl font-semibold leading-10 underline '>{workExp.sectiontitle}</h1>
+              <p className='text-[17px] font-semibold'>{workExp.title}</p>
               <p>{workExp.company}</p>
               <p>{workExp.certificate}</p>
               <p>{workExp.startdate}</p>
               <p>{workExp.enddate}</p>
               <p>{workExp.location}</p>
-              <p>{workExp.description1}</p>
-              <p>{workExp.description2}</p>
-              <p>{workExp.description3}</p>
+              <li>{workExp.description1}</li>
+              <li>{workExp.description2}</li>
+              <li>{workExp.description3}</li>
             </div>
           </div>
 

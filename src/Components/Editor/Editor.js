@@ -6,7 +6,7 @@ import './Editor.css'
 
 const Editor = ({ sections }) => {
   const section = sections;
-  const a = ['blue', 'black', 'red', 'yellow', 'aqua']
+  const a = ['white', 'black', 'red', 'yellow', 'aqua']
   var pallate;
   
   const [activeBorder,setActiveBorder]=useState('red')
@@ -243,7 +243,7 @@ const Editor = ({ sections }) => {
   </>
   )
   const summary = (<>
-    <Inputtitle label={"Title :-"} value={summarys.achivement4} onChange={(event) => setSummarys(prevState => ({
+    <Inputtitle label={"Title :-"} value={summarys.sectiontitle} onChange={(event) => setSummarys(prevState => ({
       ...prevState, sectiontitle: (event.target.value)
     }))} placeholder="Enter section title"></Inputtitle>
     <Inputtitle label={"Summary :-"} value={summarys.achivement4} onChange={(event) => setSummarys(prevState => ({
@@ -253,7 +253,9 @@ const Editor = ({ sections }) => {
   </>
   )
   const other = (<>
-    <Inputtitle label={"Title :-"} placeholder="Enter section title"></Inputtitle>
+    <Inputtitle label={"Title :-"} value={others.sectiontitle} onChange={(event) => setOthers(prevState => ({
+      ...prevState, sectiontitle: (event.target.value)
+    }))} placeholder="Enter section title"></Inputtitle>
     <Inputtitle label={"Other :-"} placeholder="Enter other here"></Inputtitle>
 
     <button type="button" className="text-black bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center m-4 " onClick={() => setresumestate(true)} >SAVE</button>
@@ -318,7 +320,7 @@ const Editor = ({ sections }) => {
 
         </div>
       </div>
-      {/* <div className='my-8 heading-color'>
+      <div className='my-8 heading-color'>
         <div className=" bg-[#f0edfe] flex justify-around">
           <div  className='flex gap-2 cursor-pointer'>
             {
@@ -335,11 +337,11 @@ const Editor = ({ sections }) => {
           </div>
           <p className="text-xl leading-10 tracking-[1px] font-semibold">Select color to highlight importants</p>
         </div>
-      </div> */}
-      <div className='container flex justify-start mx-auto '>
+      </div>
+      <div className='container flex justify-center mx-auto '>
 
         {
-          resumestate ? <Resume  pallateActive={activeBorder}  basic={basicInfoData}  workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> : ""
+          resumestate ? <Resume   pallateActive={activeBorder}  basic={basicInfoData}  workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> : ""
         }
 
       </div>
