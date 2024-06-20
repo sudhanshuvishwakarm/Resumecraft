@@ -2,14 +2,22 @@ import React, { useEffect, useState } from 'react'
 import Inputtitle from '../Inputtitle/Inputtitle';
 import Resume from '../Resume/Resume';
 import './Editor.css'
+import Themes from '../Themes/Themes';
 
 
 const Editor = ({ sections }) => {
   const section = sections;
   const a = ['white', 'black', 'red', 'yellow', 'aqua']
-  var pallate;
+ 
+  //from child theme selection
+  const [dataFromChild, setDataFromChild] = useState();
+
+  const handleDataFromChild = (childData) => {
+    setDataFromChild(childData);
+    
+  };
   
-  const [activeBorder,setActiveBorder]=useState('red')
+  const [activeBorder, setActiveBorder] = useState('red')
 
   const [activestate, setactivestate] = useState(0);
   const [resumestate, setresumestate] = useState(false);
@@ -38,7 +46,7 @@ const Editor = ({ sections }) => {
   const [project, setProjects] = useState({
     sectiontitle: "Projects",
     title: "",
-    overview: "",
+    // overview: "",
     deploylink: "",
     githublink: "",
     projectdescription: "",
@@ -87,7 +95,7 @@ const Editor = ({ sections }) => {
 
 
   const basicinfo = (<>
-    <Inputtitle label={"Title :-"}  value={basicInfoData.sectiontitle} placeholder="Enter section title" onChange={(e) => setBasicInfoData(prevState => ({
+    <Inputtitle label={"Title :-"} value={basicInfoData.sectiontitle} placeholder="Enter section title" onChange={(e) => setBasicInfoData(prevState => ({
       ...prevState, sectiontitle: (e.target.value)
     }))}></Inputtitle>
 
@@ -176,9 +184,9 @@ const Editor = ({ sections }) => {
     <Inputtitle label={"Title :-"} value={project.title} onChange={(event) => setProjects(prevState => ({
       ...prevState, title: (event.target.value)
     }))} placeholder="Enter title e.g. chat app"></Inputtitle>
-    <Inputtitle label={"Overview :-"} value={project.overview} onChange={(event) => setProjects(prevState => ({
+    {/* <Inputtitle label={"Overview :-"} value={project.overview} onChange={(event) => setProjects(prevState => ({
       ...prevState, overview: (event.target.value)
-    }))} placeholder="Enter basic overview of project"></Inputtitle>
+    }))} placeholder="Enter basic overview of project"></Inputtitle> */}
 
     <div className='flex'>
       <Inputtitle label={"Deployed Link :-"} value={project.deploylink} onChange={(event) => setProjects(prevState => ({
@@ -246,7 +254,7 @@ const Editor = ({ sections }) => {
     <Inputtitle label={"Title :-"} value={summarys.sectiontitle} onChange={(event) => setSummarys(prevState => ({
       ...prevState, sectiontitle: (event.target.value)
     }))} placeholder="Enter section title"></Inputtitle>
-    <Inputtitle label={"Summary :-"} value={summarys.achivement4} onChange={(event) => setSummarys(prevState => ({
+    <Inputtitle label={"Summary :-"} value={summarys.summary} onChange={(event) => setSummarys(prevState => ({
       ...prevState, summary: (event.target.value)
     }))} placeholder="Enter summary here" ></Inputtitle>
     <button type="button" className="text-black bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center m-4 " onClick={() => setactivestate(6)} >Next</button>
@@ -256,11 +264,41 @@ const Editor = ({ sections }) => {
     <Inputtitle label={"Title :-"} value={others.sectiontitle} onChange={(event) => setOthers(prevState => ({
       ...prevState, sectiontitle: (event.target.value)
     }))} placeholder="Enter section title"></Inputtitle>
-    <Inputtitle label={"Other :-"} placeholder="Enter other here"></Inputtitle>
+    <Inputtitle label={"Other :-"} value={others.Other} onChange={(event) => setOthers(prevState => ({
+      ...prevState, Other: (event.target.value)
+    }))} placeholder="Enter other here"></Inputtitle>
 
     <button type="button" className="text-black bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br  font-medium rounded-lg text-sm px-5 py-2.5 text-center m-4 " onClick={() => setresumestate(true)} >SAVE</button>
   </>
   )
+
+  const activeResume1=(<>
+   <Resume others={others} pallateActive={activeBorder} basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> 
+  </>)
+  const activeResume2=(<>
+   <Resume others={others}  basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> 
+  </>)
+  const activeResume3=(<>
+   <Resume others={others} pallateActive={activeBorder} basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> 
+  </>)
+
+  const activeResumeBody=()=>{
+    switch (dataFromChild) {
+      case 0:
+        return activeResume1
+        break;
+      case 1:
+        return activeResume2
+        break;
+      case 2:
+        return activeResume3
+        break;
+    
+      default:
+        return ""
+        break;
+    }
+  }
 
 
 
@@ -296,15 +334,15 @@ const Editor = ({ sections }) => {
 
   return (
     <>
-    <h1 className='w-[100%] top-0 p-4 text-4xl m-auto font-semibold text-center text-black  heading2' data-aos="fade-left">Fill to create resume</h1>
-      <div className='container mx-auto min-h-[600px] max-w-[1000px] m-10' data-aos="flip-left" >
+      <h1 id='editor' className='w-[100%] top-0 p-4 text-4xl m-auto font-semibold text-center text-black  heading2' data-aos="fade-left">Fill to create resume</h1>
+      <div className='container mx-auto min-h-[600px] max-w-[1000px] m-10' id='totransform' data-aos="flip-left" >
         <div className='container flex items-center justify-center '>
           {
             Object.values(section).map((obj, index) => {
               return (
-                <div onClick={() => setactivestate(index)}   style={{
+                <div onClick={() => setactivestate(index)} style={{
                   backgroundColor: activestate === index ? '#3ED3CD' : "",
-                  font:'bold',
+                  font: 'bold',
                   textDecorationLine: activestate === index ? 'underline' : ""
                 }} className={`py-2 text-lg border-2 border-black rounded-sm cursor-pointer flex-1 `} key={index}>{obj}</div>
               )
@@ -320,28 +358,35 @@ const Editor = ({ sections }) => {
 
         </div>
       </div>
-      <div className='my-8 heading-color'>
-        <div className=" bg-[#f0edfe] flex justify-around">
-          <div  className='flex gap-2 cursor-pointer'>
-            {
-              a.map((color, index) => {
-                return (
-                  <div key={index} onClick={()=>{setActiveBorder(color)
-                  }}  style={{
-                    background: color,
-                     border:activeBorder===color?"2px solid black":""
-                  }} className={` h-[40px] w-[40px] rounded-[50%]`}></div>
-                )
-              })
-            }
-          </div>
-          <p className="text-xl leading-10 tracking-[1px] font-semibold">Select color to highlight importants</p>
+      <div  className='bg-[#003B77] p-[30px]    '>
+      <h1 id='editor' className='w-[100%] top-0 p-4 text-4xl m-auto font-semibold text-center text-white  heading2' data-aos="fade-left">Resume Theme Templates</h1>
+        <div className=' heading-color'>
+                <Themes onData={handleDataFromChild}></Themes>
+          {/* <div className="container mx-auto flex justify-around my-[30px] py-[20px]" id='pallate_blur'>
+            <div className='flex gap-2 cursor-pointer'>
+              {
+                a.map((color, index) => {
+                  return (
+                    <div key={index} onClick={() => {
+                      setActiveBorder(color)
+                    }} style={{
+                      background: color,
+                      border: activeBorder === color ? "4px solid black" : "",
+                     
+                    }} className={` h-[40px] w-[40px] rounded-[50%]`}></div>
+                  )
+                })
+              }
+            </div>
+            <p className="text-xl leading-10 tracking-[1px] text-white font-semibold">Select color to highlight importants</p>
+          </div> */}
         </div>
       </div>
       <div className='container flex justify-center mx-auto '>
 
         {
-          resumestate ? <Resume   pallateActive={activeBorder}  basic={basicInfoData}  workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> : ""
+         
+          activeResumeBody()
         }
 
       </div>

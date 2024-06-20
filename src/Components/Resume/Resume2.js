@@ -32,7 +32,7 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
 
   return (
     <>
-    <div className='flex flex-col my-10 w-[794px] h-[1124px] ' ref={pdfRef}>
+    <div className='flex flex-col w-[794px] h-[1124px] ' ref={pdfRef}>
       <section className='flex flex-col w-[794px] h-[1124px] mx-auto bg-white'>
         <div className='flex flex-col basic'>
           <div className='flex flex-col gap-[5px] p-7 text-center bg-slate-700'>

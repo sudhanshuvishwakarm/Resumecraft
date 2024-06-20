@@ -1,3 +1,10 @@
 .main-heading{
     font-family: open-sans;
 }
+#hero{
+    background-image: url(https://el.commonsupport.com/newwp/unico/wp-content/uploads/2020/12/tbg-77.png);
+    background-color: #003B77;
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+}
