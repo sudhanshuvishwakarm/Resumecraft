@@ -10,7 +10,7 @@ const Themes = ({onData}) => {
 
 
 
-  let array=["https://imagetolink.com/ib/LNSejgnFmM.png","https://s3.resume.io/cdn-cgi/image/width=524,format=auto/uploads/examples/resume/resume_pages/285/persistent-resource/software-developer-resume-examples.jpg","https://s3.resume.io/cdn-cgi/image/width=524,format=auto/uploads/examples/resume/resume_pages/255/persistent-resource/web-developer-resume-examples.jpg",];
+  let array=["https://imagetolink.com/ib/LNSejgnFmM.png","https://s3.resume.io/cdn-cgi/image/width=524,format=auto/uploads/examples/resume/resume_pages/255/persistent-resource/web-developer-resume-examples.jpg"];
 
   
   var settings = {
@@ -56,3 +56,4 @@ export default Themes
 
 
 // "https://s3.resume.io/cdn-cgi/image/width=524,format=auto/uploads/examples/resume/resume_pages/186/persistent-resource/data-analyst-resume-examples.jpg"
+

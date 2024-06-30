@@ -1,4 +1,4 @@
-.main-heading{
+/* .main-heading{
     font-family: open-sans;
 }
 #hero{
@@ -7,4 +7,31 @@
     background-size: cover;
     height: 100%;
     background-repeat: no-repeat;
+} */
+
+
+#hero {
+    background-image: url(https://el.commonsupport.com/newwp/unico/wp-content/uploads/2020/12/tbg-77.png);
+    background-color: #003B77;
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.header-content {
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.main-heading {
+    color: white;
+    font-family: open-sans;
+}
+
+.background-image {
+    background-color: transparent;
+    padding: 10px;
 }

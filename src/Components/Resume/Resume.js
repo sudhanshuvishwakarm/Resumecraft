@@ -32,17 +32,17 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
 
   return (
     <>
-    <div className='flex flex-col my-10 w-[794px] h-[1124px] ' ref={pdfRef}>
-      <section className='flex flex-col w-[794px] h-[1124px] mx-auto bg-white'>
+    <div className='flex flex-col my-10  w-[794px] h-[1124px] ' ref={pdfRef}>
+      <section className='flex flex-col w-[794px] h-[1124px]  mx-auto bg-white'>
         <div className='flex flex-col basic'>
-          <div className='flex flex-col gap-[5px] p-7 text-center bg-slate-700'>
+          <div className='flex flex-col gap-[5px] p-4 text-center bg-slate-700'>
             <h1 className='py-2 text-[40px] text-white font-semibold leading-10'>{basic.name}</h1>
             <p className="text-4xl" style={{ color: pallateActive }}>{basic.title}</p>
           </div>
         </div>
 
         <div className='flex justify-between w-[100%] h-[1124px]'>
-          <div className='flex flex-col text-start h-[100%] w-[60%] p-10 bg-orange-200 left'>
+          <div className='flex flex-col text-start h-[100%] w-[60%] p-5 bg-orange-200 left'>
             <div className='flex flex-col text-start w-[100%] left py-5'>
               <h1 className='py-2 text-3xl font-semibold leading-10 underline'>Contact Details</h1>
               <p><i className="m-2 fa-solid fa-envelope"></i>{basic.email}</p>

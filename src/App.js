@@ -5,10 +5,10 @@ import Contactus from './Components/Contactus/Contactus.js';
 
 function App() {
   return (
-    <div className=" App ">
+    <div className=" App">
      <Header name="test1" />
      <Body name="test2"></Body>
-     {/* <Contactus></Contactus> */}
+     <Contactus></Contactus>
     </div>
   );
 }

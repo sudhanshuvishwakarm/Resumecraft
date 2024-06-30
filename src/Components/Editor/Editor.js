@@ -3,6 +3,7 @@ import Inputtitle from '../Inputtitle/Inputtitle';
 import Resume from '../Resume/Resume';
 import './Editor.css'
 import Themes from '../Themes/Themes';
+import Resume2 from '../Resume/Resume2';
 
 
 const Editor = ({ sections }) => {
@@ -276,7 +277,7 @@ const Editor = ({ sections }) => {
    <Resume others={others} pallateActive={activeBorder} basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> 
   </>)
   const activeResume2=(<>
-   <Resume others={others}  basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> 
+   <Resume2 others={others} pallateActive={activeBorder} basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume2> 
   </>)
   const activeResume3=(<>
    <Resume others={others} pallateActive={activeBorder} basic={basicInfoData} workExp={workExpData} projectData={project} educationData={educations} achivementData={achivement} summaryData={summarys}></Resume> 
@@ -359,7 +360,7 @@ const Editor = ({ sections }) => {
         </div>
       </div>
       <div  className='bg-[#003B77] p-[30px]    '>
-      <h1 id='editor' className='w-[100%] top-0 p-4 text-4xl m-auto font-semibold text-center text-white  heading2' data-aos="fade-left">Resume Theme Templates</h1>
+      <h1 id='editor' className='w-[100%] top-0 p-4 text-4xl m-auto font-semibold text-center text-white  heading2' data-aos="fade-left">Select Resume Template</h1>
         <div className=' heading-color'>
                 <Themes onData={handleDataFromChild}></Themes>
           {/* <div className="container mx-auto flex justify-around my-[30px] py-[20px]" id='pallate_blur'>
@@ -382,7 +383,7 @@ const Editor = ({ sections }) => {
           </div> */}
         </div>
       </div>
-      <div className='container flex justify-center mx-auto '>
+      <div className=' flex justify-center mx-auto bg-[#f8fdf6] '>
 
         {
          
