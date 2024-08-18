@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/resumecraft/static/css/main.b3bb159a.css",
-    "main.js": "/resumecraft/static/js/main.c4d86ae8.js",
+    "main.css": "/resumecraft/static/css/main.491169d0.css",
+    "main.js": "/resumecraft/static/js/main.65987b76.js",
     "static/js/213.6af75fd5.chunk.js": "/resumecraft/static/js/213.6af75fd5.chunk.js",
     "static/js/732.a4279ae3.chunk.js": "/resumecraft/static/js/732.a4279ae3.chunk.js",
     "static/js/453.a074a449.chunk.js": "/resumecraft/static/js/453.a074a449.chunk.js",
     "index.html": "/resumecraft/index.html",
-    "main.b3bb159a.css.map": "/resumecraft/static/css/main.b3bb159a.css.map",
-    "main.c4d86ae8.js.map": "/resumecraft/static/js/main.c4d86ae8.js.map",
+    "main.491169d0.css.map": "/resumecraft/static/css/main.491169d0.css.map",
+    "main.65987b76.js.map": "/resumecraft/static/js/main.65987b76.js.map",
     "213.6af75fd5.chunk.js.map": "/resumecraft/static/js/213.6af75fd5.chunk.js.map",
     "732.a4279ae3.chunk.js.map": "/resumecraft/static/js/732.a4279ae3.chunk.js.map",
     "453.a074a449.chunk.js.map": "/resumecraft/static/js/453.a074a449.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3bb159a.css",
-    "static/js/main.c4d86ae8.js"
+    "static/css/main.491169d0.css",
+    "static/js/main.65987b76.js"
   ]
 }
