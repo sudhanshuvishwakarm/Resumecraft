@@ -6,8 +6,8 @@ const Header = () => {
     return (
         <div className='flex flex-col items-center justify-center w-full h-full' id='hero'>
             <div className='header-content'>
-                <div className='flex px-[50px] py-[40px] justify-between h-[100px] w-full text-start'>
-                    <div className='flex items-center justify-center w-full'>
+                <div  className='flex px-[50px] py-[40px] justify-between h-[100px] w-full text-start'>
+                    <div data-aos="fade-right" className='flex items-center justify-center w-full'>
                         <img
                             className='w-[48px] h-[48px] m-auto bg-white'
                             src="https://webstockreview.net/images/resume-clipart-resume-icon.png"
@@ -17,7 +17,7 @@ const Header = () => {
                             Resume Craft
                         </h1>
                     </div>
-                    <div className='flex items-center justify-end w-full my-auto'>
+                    <div data-aos="fade-left" className='flex items-center justify-end w-full my-auto'>
                         <Link
                             activeClass="active"
                             to="ContactUs"

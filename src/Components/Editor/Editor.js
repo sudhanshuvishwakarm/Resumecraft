@@ -383,8 +383,8 @@ const Editor = ({ sections }) => {
           </div> */}
         </div>
       </div>
-      <div className=' flex justify-center mx-auto bg-[#f8fdf6] '>
-
+      <div className='flex flex-col justify-center mx-auto bg-white '>
+          
         {
          
           activeResumeBody()

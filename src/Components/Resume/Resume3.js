@@ -32,7 +32,8 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
 
   return (
     <>
-    <div className='flex flex-col w-[794px] h-[1124px] ' ref={pdfRef}>
+    <h1 className='top-0 p-4 m-auto text-4xl font-semibold text-center text-Black w-[300]'>Resume Preview</h1>
+    <div className='flex flex-col w-[794px] mx-auto ' ref={pdfRef}>
       <section className='flex flex-col w-[794px] h-[1124px] mx-auto bg-white'>
         <div className='flex flex-col basic'>
           <div className='flex flex-col gap-[5px] p-7 text-center bg-slate-700'>
@@ -78,8 +79,8 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
               <p className='text-[17px] font-semibold'>{projectData.title}</p>
               <p className='py-[2px] underline cursor-pointer'>{projectData.deploylink}</p>
               <p className='py-[2px] underline cursor-pointer'>{projectData.githublink}</p>
-              {/* <li>{projectData.overview}</li> */}
-              <li>{projectData.projectdescription}</li>
+              {/* <p>{projectData.overview}</p> */}
+              <p>{projectData.projectdescription}</p>
             </div>
             <div className="flex flex-col py-2 text-start">
               <h1 className='py-2 text-3xl font-semibold leading-10 underline'>{workExp.sectiontitle}</h1>
@@ -89,9 +90,9 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
               <p>{workExp.startdate}</p>
               <p>{workExp.enddate}</p>
               <p>{workExp.location}</p>
-              <li>{workExp.description1}</li>
-              <li>{workExp.description2}</li>
-              <li>{workExp.description3}</li>
+              <p>{workExp.description1}</p>
+              <p>{workExp.description2}</p>
+              <p>{workExp.description3}</p>
             </div>
             <div className="flex flex-col py-2 text-start">
               <h1 className='py-2 text-3xl font-semibold leading-10 underline'>{others.sectiontitle}</h1>

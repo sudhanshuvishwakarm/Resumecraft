@@ -32,7 +32,9 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
 
   return (
     <>
-    <div className='flex flex-col my-10  w-[794px] h-[1124px] ' ref={pdfRef}>
+
+
+    <div className='flex flex-col my-10 gap-[50px] w-[794px]  mx-auto' ref={pdfRef}>
       <section className='flex flex-col w-[794px] h-[1124px]  mx-auto bg-white'>
         <div className='flex flex-col basic'>
           <div className='flex flex-col gap-[5px] p-4 text-center bg-slate-700'>
@@ -78,8 +80,8 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
               <p className='text-[17px] font-semibold'>{projectData.title}</p>
               <p className='py-[2px] underline cursor-pointer'>{projectData.deploylink}</p>
               <p className='py-[2px] underline cursor-pointer'>{projectData.githublink}</p>
-              {/* <li>{projectData.overview}</li> */}
-              <li>{projectData.projectdescription}</li>
+              {/* <p>{projectData.overview}</p> */}
+              <p>{projectData.projectdescription}</p>
             </div>
             <div className="flex flex-col py-2 text-start">
               <h1 className='py-2 text-3xl font-semibold leading-10 underline'>{workExp.sectiontitle}</h1>
@@ -89,9 +91,9 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
               <p>{workExp.startdate}</p>
               <p>{workExp.enddate}</p>
               <p>{workExp.location}</p>
-              <li>{workExp.description1}</li>
-              <li>{workExp.description2}</li>
-              <li>{workExp.description3}</li>
+              <p>{workExp.description1}</p>
+              <p>{workExp.description2}</p>
+              <p>{workExp.description3}</p>
             </div>
             <div className="flex flex-col py-2 text-start">
               <h1 className='py-2 text-3xl font-semibold leading-10 underline'>{others.sectiontitle}</h1>
@@ -102,7 +104,7 @@ const Resume = ({ basic, workExp,others, projectData, educationData, achivementD
         </div>
       </section>
 
-      <button type='button' className="text-black bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br font-medium rounded-lg text-lg px-5 py-2.5 text-center mx-auto my-[30px] w-[150px] " onClick={downloadPDF}>Download</button>
+      <button type='button' className="text-black bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br font-medium rounded-lg text-lg px-5 py-2.5 text-center mx-auto  w-[150px] " onClick={downloadPDF}>Download</button>
       
     </div>
       {downloadComplete ? <div id='download-success' data-aos="fade-up" className="text-black ] font-medium bg rounded-sm text-sm px-5 py-2.5 text-center mx-auto bg-[#3ed3ce58]  m-[100px]  ">Download Successful! <i class="fa-solid fa-download"></i></div>:"" }</>
